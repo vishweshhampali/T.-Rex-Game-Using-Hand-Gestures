@@ -1,18 +1,6 @@
 from cv2 import cv2
 import numpy as np 
 import pyautogui
-'''
-def nothing(x):
-    pass
-cv2.namedWindow("Trackbar")
-
-cv2.createTrackbar("LH", "Trackbar", 0, 255, nothing)
-cv2.createTrackbar("LS", "Trackbar", 0, 255, nothing)
-cv2.createTrackbar("LV", "Trackbar", 0, 255, nothing)
-
-cv2.createTrackbar("UH", "Trackbar", 255, 255, nothing)
-cv2.createTrackbar("US", "Trackbar", 255, 255, nothing)
-cv2.createTrackbar("UV", "Trackbar", 255, 255, nothing)'''
 
 
 cap = cv2.VideoCapture(0)
@@ -23,13 +11,6 @@ while cap.isOpened():
     image = frame[0:240, 350:640]
     blur = cv2.GaussianBlur(image, (3,3), 0)
     hsv = cv2.cvtColor(blur, cv2.COLOR_BGR2HSV) 
-
-    '''lh = cv2.getTrackbarPos("LH","Trackbar")
-    ls = cv2.getTrackbarPos("LS","Trackbar")
-    lv = cv2.getTrackbarPos("LV","Trackbar")
-    uh = cv2.getTrackbarPos("UH","Trackbar")
-    us = cv2.getTrackbarPos("US","Trackbar")
-    uv = cv2.getTrackbarPos("UV","Trackbar")'''
 
     l_b = np.array([3,29,60])
     u_b = np.array([255,255,255])
